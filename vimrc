@@ -1,6 +1,7 @@
 execute pathogen#infect()
 filetype plugin indent on
 syntax on
+
 set t_Co=256
 colorscheme monokai
 set tabstop=4
@@ -33,8 +34,8 @@ let g:neocomplete#enable_at_startup=1
 
 
 "NerdTree
-nmap <leader>t :NERDTreeToggle<CR>
-nmap <leader>f :NERDTreeFind<CR>
+nmap <leader>nt :NERDTreeToggle<CR>
+nmap <leader>nf :NERDTreeFind<CR>
 
 "navigate tabs
 noremap <leader>1 1gt
@@ -55,7 +56,10 @@ nmap <silent> <c-i> :wincmd k<CR>
 nmap <silent> <c-k> :wincmd j<CR>
 nmap <silent> <c-j> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
-nmap <silent> <c-a> :w<CR>
+
+"map save
+nmap <c-s> :w<CR>
+imap <c-s> <Esc>:w<CR>a
 "remap Esc
 "imap   <Esc>
 
@@ -100,3 +104,18 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 "Enable goimports to automatically insert import paths instead of gofmt
 let g:go_fmt_command = "goimports"
+let g:go_auto_type_info = 1
+
+"Golang Key map
+au FileType go nmap <Leader>im <Plug>(go-implements)
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gdv <Plug>(go-doc-vertical)
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+au FileType go nmap <Leader>e <Plug>(go-rename)
