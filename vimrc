@@ -60,6 +60,7 @@ nmap <silent> <c-l> :wincmd l<CR>
 "map save
 nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>a
+imap <x-c> :wq<CR>
 "remap Esc
 "imap   <Esc>
 
@@ -108,7 +109,7 @@ let g:go_auto_type_info = 1
 
 "Golang Key map
 au FileType go nmap <Leader>im <Plug>(go-implements)
-au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>if <Plug>(go-info)
 au FileType go nmap <Leader>gd <Plug>(go-doc)
 au FileType go nmap <Leader>gdv <Plug>(go-doc-vertical)
 au FileType go nmap <leader>r <Plug>(go-run)
